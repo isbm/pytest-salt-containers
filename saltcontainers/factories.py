@@ -222,7 +222,7 @@ class MasterFactory(SaltFactory):
     @classmethod
     def build(cls, **kwargs):
         obj = super(MasterFactory, cls).build(**kwargs)
-        obj['container'].run("salt-call --local state.apply")
+        obj['container'].run("salt-call --local state.apply queue=true")
         return obj
 
 
